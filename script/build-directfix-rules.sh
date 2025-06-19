@@ -17,8 +17,8 @@ mihomo_mrs_file="${mihomo_txt_file%.txt}.mrs"
 
 # 规则源列表
 urls=(
-        https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.list
-        https://raw.githubusercontent.com/ykvhjnn/mihomo-rule/refs/heads/main/self/Direct-fix.yaml
+    "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.list"
+    "https://raw.githubusercontent.com/ykvhjnn/mihomo-rule/refs/heads/main/self/Direct-fix.yaml"
 )
 
 > "$domain_file"

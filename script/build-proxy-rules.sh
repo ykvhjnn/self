@@ -17,11 +17,11 @@ mihomo_mrs_file="${mihomo_txt_file%.txt}.mrs"
 
 # 规则源列表
 urls=(
-        https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/tld-proxy.list
-        https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/proxy.list
-        https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global_Domain_For_Clash.txt
-        https://raw.githubusercontent.com/peasoft/NoMoreWalls/refs/heads/master/snippets/region.yml
-        https://raw.githubusercontent.com/ykvhjnn/mihomo-rule/refs/heads/main/self/Proxy-fix.yaml
+    "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/tld-proxy.list"
+    "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/proxy.list"
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global_Domain_For_Clash.txt"
+    "https://raw.githubusercontent.com/peasoft/NoMoreWalls/refs/heads/master/snippets/region.yml"
+    "https://raw.githubusercontent.com/ykvhjnn/mihomo-rule/refs/heads/main/self/Proxy-fix.yaml"
 )
 
 > "$domain_file"

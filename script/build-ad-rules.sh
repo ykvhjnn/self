@@ -18,6 +18,10 @@ mihomo_mrs_file="${mihomo_txt_file%.txt}.mrs"
 # 规则源列表
 urls=(
     "https://raw.githubusercontent.com/ghvjjjj/adblockfilters/refs/heads/main/rules/adblockdomain.txt"
+    "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdnslite.txt"
+    "https://raw.githubusercontent.com/Cats-Team/AdRules/main/dns.txt"
+    "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/refs/heads/master/anti-ad-domains.txt"
+    "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/refs/heads/master/anti-ad-adguard.txt"
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt"
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.oppo-realme.txt"
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.vivo.txt"
