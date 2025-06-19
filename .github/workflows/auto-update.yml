@@ -21,12 +21,15 @@ jobs:
       # Setup Environment
       - name: Setup Environment
         run: |
-          chmod +x ./script/build-*-rules.sh
-
+          chmod +x ./script/build-ad-rules.sh
+          chmod +x ./script/build-proxy-rules.sh
+          chmod +x ./script/build-directfix-rules.sh
       # Run build script
       - name: Build Rules
         run: |
-          bash ./script/build-*-rules.sh
+          bash ./script/build-ad-rules.sh
+          bash ./script/build-proxy-rules.sh
+          bash ./script/build-directfix-rules.sh
       
       # Commit and push changes if detected
       - name: Commit Changes
