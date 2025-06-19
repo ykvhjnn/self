@@ -1,3 +1,4 @@
++.0.cn
 +.0-02.net
 +.sanrjeofikacje24.00090.info
 +.adminpanel.000a.biz
@@ -2188,6 +2189,7 @@
 +.a8.net
 +.a85.info
 +.a866.top
++.a8clk.securee
 +.a8ww.net
 +.a908a849.xyz
 +.a911.xyz
@@ -2833,13 +2835,13 @@
 +.ordie.adbureau.net
 +.ozonemedia.adbureau.net
 +.pntm.adbureau.net
-+.pntm-images.adbureau.net
 +.sh4sure-images.adbureau.net
 +.sixapart.adbureau.net
 +.sol.adbureau.net
 +.sol-images.adbureau.net
 +.techreview.adbureau.net
 +.techreview-images.adbureau.net
++.touchclarity.comtm-images.adbureau.net
 +.trvlnet.adbureau.net
 +.trvlnet-images.adbureau.net
 +.ttarget.adbureau.net
@@ -2967,6 +2969,7 @@
 +.adiapcandi.pro
 +.adibiflubd.pro
 +.sa.adidas.cn
++.sa.adidas.secom
 +.adigi.icu
 +.adiingsinspiri.org
 +.adimg.net
@@ -3151,6 +3154,7 @@
 +.ads-management.su
 +.ads-pixiv.net
 +.ads-to.click
++.ads17.fop
 +.ads24.net
 +.ads24h.net
 +.ads2550.bid
@@ -3209,6 +3213,7 @@
 +.adsilo.pro
 +.adsima.net
 +.adserver.adsimsar.net
++.adsin.zhangyou
 +.adslop.link
 +.adsmarch.online
 +.adsmart.hk
@@ -4129,7 +4134,6 @@
 +.akzawlyyllywa.top
 +.al-awda.org
 +.aladel.net
-+.alagaodeali.cloud
 +.analytics.alandsradio.ax
 +.alaoena.xyz
 +.arabs.alarbda.net
@@ -5157,6 +5161,7 @@
 +.apotheke.cc
 +.apotheke.group
 +.apotypeigniter.click
++.tzgurwizule3.app.care
 +.app.photography
 +.app-axiom.trade
 +.app-balls.world
@@ -6281,7 +6286,6 @@
 +.wwi.avisos-gerente.app
 +.avjbjbekaaowm.top
 +.avjbjbekaawzr.top
-+.metrics.avkcpbqut.one
 +.avkd.cn
 +.avkeyfinder.store
 +.avloan3431.fun
@@ -9520,6 +9524,7 @@
 +.bricolebai.top
 +.frdoki.bridalgown.work
 +.bridge.link
++.aqcsfydalipcard.bridged.media
 +.flipcard.bridged.media
 +.app.bridgeimpex.org
 +.pcms.bridgeimpex.org
@@ -14418,7 +14423,6 @@
 +.baidu1.codejie.net
 +.dragon.codemakes.art
 +.log.codemarketing.cloud
-+.cookie.codemarketingo.cn
 +.codenow.cn
 +.codepalpreplanviewer.info
 +.coderendam.pro
@@ -14859,6 +14863,7 @@
 +.discover.absciex.com.cn
 +.dmp.sina.com.cn
 +.dns.weixin.qq.com.cn
++.dnserror3.wo.com.cn
 +.domob.com.cn
 +.dopa.com.cn
 +.down.gotek.com.cn
@@ -15175,7 +15180,6 @@
 +.sc.sonystyle.com.cn
 +.sddnserror1.wo.com.cn
 +.sddnserror2.wo.com.cn
-+.sddnserror3.wo.com.cn
 +.sddnserror4.wo.com.cn
 +.sddnserror5.wo.com.cn
 +.sddnserror6.wo.com.cn
@@ -16033,6 +16037,7 @@
 +.tr.computeruniverse.net
 +.computramo.pro
 +.compuunsew.pro
++.guvnatar.comr.top
 +.dns.comss.net
 +.comtakelink.xyz
 +.newsletters.comu.su
@@ -16349,6 +16354,7 @@
 +.coogoanu.net
 +.coohauwhob.net
 +.coojohoaboapee.xyz
++.cookie.codemarketingm
 +.cookie.support
 +.cookiebot.eu
 +.cookiecasino.online
@@ -16611,6 +16617,7 @@
 +.covisiononeness.org
 +.rodent.covisitor.app
 +.covivado.club
++.assets.eafit.edu.covkcpbqut.one
 +.covoabett.pro
 +.cowater.net
 +.cowcuo.xyz
@@ -17408,6 +17415,7 @@
 +.cy123.cc
 +.cya1t.net
 +.cya2.net
++.info.voxbone.cyaabdssxdlg.space
 +.cyad.cc
 +.cyamidfenbank.life
 +.cyanara.pro
@@ -17658,6 +17666,7 @@
 +.dajs001.shop
 +.dakadu-yefini.site
 +.dakawm.cc
++.dakic-ia-30zhx.tech
 +.dakotainc.net
 +.dakotasboreens.top
 +.daksenskied.top
@@ -22382,7 +22391,6 @@
 +.dzkdyqyvadyqq.online
 +.dzkwj0y.xyz
 +.dznews.live
-+.dzrefa.panamericcom
 +.dzuabban.pro
 +.dzunnuroin.org
 +.dzzdspiu.icu
@@ -23324,6 +23332,7 @@
 +.emacipocol.pro
 +.www.emadesign.net
 +.emags.shop
++.email.top
 +.emailboard.net
 +.emailinbox.net
 +.tr.client.emailing.bnpparibas
@@ -24053,6 +24062,7 @@
 +.estithmar.net
 +.frdoki.estlier.net
 +.wtag.estlier.net
++.estore.biscoin
 +.estpeopleshouldth.org
 +.estrack.net
 +.estraquave.pro
@@ -24320,6 +24330,7 @@
 +.ev77.top
 +.adconsole.eva.live
 +.adimages.eva.live
++.angioiddiantre.tadimages.eva.live
 +.evadavdsp.pro
 +.evagidisco.pro
 +.evagisforn.pro
@@ -24362,6 +24373,7 @@
 +.eventtruss.org
 +.9kkjfywjz50v.www.eventus.io
 +.q4l5gz6lqog6.www.eventus.io
++.vl5gz6lqog6.www.eventus.io
 +.everblossom.pro
 +.everdreamsofc.info
 +.a8.everest.ac
@@ -26888,6 +26900,7 @@
 +.friendlylobster.pro
 +.friendlyloon.pro
 +.friendlywaves.pro
++.datingadvertisiliving.friendsview.org
 +.seniorliving.friendsview.org
 +.frighten3452.fun
 +.frignovera.pro
@@ -29736,6 +29749,7 @@
 +.gnyuhzd.icu
 +.gnzodisar.pro
 +.go.biz
++.go.evoluti
 +.go-cpa.click
 +.click-klient.go-domain.shop
 +.go-g3t-push.net
@@ -30653,6 +30667,7 @@
 +.pgdt.gtimg.cn
 +.tianshu.gtimg.cn
 +.tianshu-x.gtimg.cn
++.gtmppo.gg
 +.gtmucs.cn
 +.gtopakistan.org
 +.gtosmdjgn.xyz
@@ -31543,6 +31558,7 @@
 +.healthwellnessnetwork.net
 +.healthy-life.market
 +.hikaria.healthy365days.org
++.healthyenjournallovers.app
 +.healthylife.market
 +.lander.healthylifestylescollective.fit
 +.healthystyle.info
@@ -31557,6 +31573,7 @@
 +.hearing-aids.live
 +.hearingaids.live
 +.barnacle.hearmeout.work
++.realm.hearst3pcimie.top
 +.news.heart-is-here.org
 +.heart4man.net
 +.ff.heartbeats.space
@@ -33149,6 +33166,7 @@
 +.m.ib345.cn
 +.ibafnw.cn
 +.ibahqcqqvjis.pro
++.info.ibamolecltkoajehyzr.click
 +.ibankis.org
 +.ibcaupqfvtnsz.website
 +.ibclick.stream
@@ -34780,6 +34798,7 @@
 +.insieuntea.pro
 +.insigena.info
 +.elqtrk.insight.tech
++.adn.insight.ucwebnl
 +.insight-fusion.info
 +.insight-harbor.info
 +.insightbeacon.cfd
@@ -35144,6 +35163,7 @@
 +.investingideas.world
 +.investingoverseas.info
 +.partner.investinslovakia.eu
++.tekpartner.investinslovakia.eu
 +.investirekivo.net
 +.investlegacy.net
 +.investmeisterpro.net
@@ -35516,6 +35536,7 @@
 +.isdfbvkvsc.xyz
 +.ishhaicncer.pro
 +.video.ishotube.xyz
++.jump.ishoulhamscaboose.website
 +.dm.ishuo.cn
 +.url.isimsepeti.net
 +.isisomeoneintheworld.org
@@ -36759,6 +36780,7 @@
 +.jsurvey.cn
 +.jsutton.info
 +.dm.jsyst.cn
++.jt0146.bet
 +.jtbunh.xyz
 +.jtdltu.top
 +.jtegqwmjfxu.site
@@ -37135,6 +37157,7 @@
 +.kaisans.top
 +.kaisauwoure.net
 +.eloqua-tracking.kaiserpermanente.org
++.goat.lymedetrics2.kaiserpermanente.org
 +.smetrics.kaiserpermanente.org
 +.smetrics2.kaiserpermanente.org
 +.kaishq.top
@@ -40100,6 +40123,7 @@
 +.logicanalytics.io
 +.logicautomation.eu
 +.logiccormax100.net
++.logicdate.como
 +.logicimitrex400.net
 +.login.enterprises
 +.login-account.ovh
@@ -41402,6 +41426,7 @@
 +.link.mark.app
 +.sst.marka.plus
 +.markbarkpace.pro
++.markecoevents.eu
 +.markedoneofthe.info
 +.plausible.marker12.org
 +.finch.market.xyz
@@ -41714,6 +41739,7 @@
 +.mbaventures.biz
 +.mbekgac.xyz
 +.mbhexchange.top
++.ptcdn.mbicash.e
 +.mbline.pro
 +.mbn.su
 +.mbniygskahiwxgnick.net
@@ -42336,6 +42362,7 @@
 +.metrics.abbott
 +.metrics.bnpparibas
 +.metrics.io
++.metrics.wingatecom
 +.metricsy.shop
 +.metritrihe.pro
 +.metrixcraft.site
@@ -42425,6 +42452,7 @@
 +.mhwozc.cn
 +.mhwy6.icu
 +.mhysbwo.xyz
++.mi.cloud
 +.mi-de-ner-nis3.info
 +.mi-portalfone.net
 +.mi1.cc
@@ -42903,6 +42931,7 @@
 +.vnzq.mmpuh.cn
 +.mmr-gov.cloud
 +.ads.mms.mk
++.mms.silivcom
 +.track.mmsvc.io
 +.mmszxc.top
 +.j.mmtu.top
@@ -43864,6 +43893,7 @@
 +.portfolio.muskmeta.live
 +.muskspacex.pro
 +.musktrump.io
++.kcqoej.roborock.c.muso.ai
 +.link.muso.ai
 +.musorferru.pro
 +.mussanefra.pro
@@ -45756,6 +45786,7 @@
 +.nisekotourguide.net
 +.metric.nissan.eu
 +.nissocial.top
++.niswivet.shop
 +.nitanoa.pro
 +.nitehush-pro.net
 +.nitevpn.cf
@@ -46931,6 +46962,7 @@
 +.cpcontacts.odysseyoutlook.xyz
 +.webdisk.odysseyoutlook.xyz
 +.webmail.odysseyoutlook.xyz
++.data-57e4acce5f.oe24radio.ato
 +.oecdupuvlbvjs.space
 +.oecigiconos.pro
 +.oeciyalb.top
@@ -47551,6 +47583,7 @@
 +.onbr-12es.top
 +.onclckbn.net
 +.onclickads.net
++.onclickperformanceywing.pro
 +.oncustomer.asia
 +.oncwwsirydji.xyz
 +.ondamappic.pro
@@ -50717,6 +50750,7 @@
 +.12112336.pix-cdn.org
 +.12114200.pix-cdn.org
 +.pixel.ad
++.pixel.lead
 +.pixel.watch
 +.pixelarray.net
 +.pixelbliss.pro
@@ -53408,6 +53442,7 @@
 +.pneumguate.pro
 +.pneuminter.pro
 +.pnhorlcjtrfau.vip
++.pniktakz.xyz
 +.flx2.pnl.agency
 +.pnlhnx.xyz
 +.ads.pno.net
@@ -54416,6 +54451,7 @@
 +.solutions.prevost.eu
 +.prewotix-app.net
 +.prezzdivas.pro
++.prf.vagnt
 +.prfctlivs.click
 +.prfectnewoffer.net
 +.prg.hr
@@ -55012,6 +55048,7 @@
 +.ptoumsid.net
 +.ptoupagreltop.net
 +.ptpscollege.org
++.policy.video.ptqy.gim
 +.ptrmnx.icu
 +.ptron.net
 +.ptsa.eu
@@ -59331,6 +59368,7 @@
 +.referinnat.pro
 +.referraggr.pro
 +.referral.best
++.referralehy.net
 +.referrer.website
 +.referturam.pro
 +.reffeltcorv.top
@@ -61161,6 +61199,7 @@
 +.info.royalreturns.org
 +.royalsearch.net
 +.royalwuet.live
++.royplz.sccc
 +.rozaholshouser.cfd
 +.rozaxfin.net
 +.rozomii.info
@@ -61581,7 +61620,6 @@
 +.s2l7tt1.top
 +.s2pl1t1.top
 +.s2tl1ttl.top
-+.gdpr-settings.s3.amazonaws
 +.s3-acronis.cloud
 +.s3-atlassian.cloud
 +.s3-bah.cloud
@@ -62656,6 +62694,7 @@
 +.sectorecoo.live
 +.secumine.net
 +.securbalsa.pro
++.secure.detcom
 +.secure-accept-e-transfer-interac.info
 +.secure-canadian-pharmacy.net
 +.secure-confirm-reservations.world
@@ -63974,6 +64013,7 @@
 +.simplrinco.pro
 +.lnstagram.bluetick.simply.site.es.simply.site
 +.simplybuy.biz
++.analytics.simplyhealth.et
 +.simplysbuy.shop
 +.hadeseh.simra.cloud
 +.simsolocphat.net
@@ -64283,6 +64323,7 @@
 +.skylinegoods.online
 +.skylinejo.world
 +.skylinemodels.eu
++.dev.marketing.skylineo.net
 +.skymedia7.me
 +.skymobi.agency
 +.skymods.net
@@ -64540,6 +64581,7 @@
 +.smentbrads.info
 +.smeritenit.pro
 +.smetrics.abbott
++.smetrics.mitsubishi-mocom
 +.smetsys.net
 +.check.smfd.ink
 +.smgru.net
@@ -65976,6 +66018,7 @@
 +.ssads.net
 +.ssapopup.top
 +.ssax.net
++.ssc.meuspremiocom
 +.sschospitality.org
 +.ssdbkv4qtq.xyz
 +.ssdcloudindia.net
@@ -66038,6 +66081,7 @@
 +.ssqalpoxsvid.pro
 +.ssqxuy.icu
 +.ssrj.net
++.load.sst.waterfo
 +.sstrade.mk
 +.ssun.info
 +.ssvajgzmqrtxa.online
@@ -72114,7 +72158,6 @@
 +.ulcerasper.pro
 +.uld7tnpvgr1ir.life
 +.uldewn.shop
-+.ulhamscaboose.website
 +.ulhida6od0xa.life
 +.uliafpsf.tattoo
 +.ulikasntorki.top
@@ -75686,6 +75729,7 @@
 +.wambubaambach.top
 +.wambugureining.shop
 +.wamylpjsegdmba.xyz
++.wan.36z
 +.media-ext.wanarun.net
 +.wanbuy.net
 +.wandelrgo.live
@@ -81305,6 +81349,7 @@
 +.wsbxfiqahxjhf.top
 +.wschao.xyz
 +.wsds.cn
++.jofzlmsbvfpld.wselmongoe.shop
 +.wsentativesathya.org
 +.wsgayq.xyz
 +.wsgnihbh.icu
@@ -83016,6 +83061,7 @@
 +.yrccils0spqnkc3.xyz
 +.olx.yregfars.cfd
 +.yremovementxvi.org
++.images.care.eamc.yren.org
 +.inpostpl.yrilighme.info
 +.yritjxjkcqf.xyz
 +.yrittajalle.info
