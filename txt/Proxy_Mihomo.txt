@@ -543,6 +543,7 @@
 +.aa1141.com
 +.aa1142.com
 +.aa77kk.com
++.aaa
 +.aaagradeheadphones.com
 +.aaapp.cyou
 +.aabb1802.com
@@ -4048,7 +4049,6 @@
 +.chillingo.com
 +.chimeforchange.org
 +.china-autodesk.com
-+.china-facebo+.aaa
 +.china-facebook.com
 +.china-mmm.net
 +.china-week.com
@@ -13683,7 +13683,6 @@
 +.oiktv.com
 +.oiobbs.com
 +.oizoblog.com
-+.ok.com
 +.okaapps.com
 +.okayfreedom.com
 +.okex.com
