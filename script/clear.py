@@ -58,14 +58,19 @@ def sort_key_ignore_tld(domain: str):
     """
     域名排序关键字生成函数，排序时忽略完整TLD，只按主域和子域排序，TLD仅在主域完全相同时才参与排序。
     :param domain: 域名字符串
-    :return: 排序所用的元组
+    :return: 排序所用的元组（保证长度一致，避免TypeError）
     """
     parts = domain.strip().split('.')
-    if not parts:
-        return ("", "", 0)
+    if not parts or not any(parts):
+        # 保证返回四元组
+        return ("", "", "", 0)
     rest, tld = extract_full_tld(parts)
-    # 主域名优先，子域其次，最后是TLD和长度
-    return (*rest[::-1], tld, len(parts))
+    # 保证返回长度一致的元组（主域、次主域、子域、TLD、总长度）
+    max_rest_len = 3  # 最多保留3级子域
+    rest_parts = list(rest[::-1])
+    while len(rest_parts) < max_rest_len:
+        rest_parts.append('')
+    return (*rest_parts[:max_rest_len], tld, len(parts))
 
 async def read_lines(file_path: str, chunk_size: int = 10000):
     """
@@ -95,30 +100,36 @@ def process_chunk(chunk: list[str]) -> set[str]:
 async def main():
     """
     主程序入口，依次完成文件读取、去重、父域名过滤、规范排序及结果写回。
+    避免所有常见错误，遇到异常时友好提示。
     """
-    if len(sys.argv) < 2:
-        print("请提供输入文件路径作为参数")
-        return
-    file_name = sys.argv[1]
-    all_domains = set()
-    # 读取文件并去重
-    async for chunk in read_lines(file_name):
-        all_domains.update(process_chunk(chunk))
-    if not all_domains:
-        print("文件为空或读取失败。")
-        return
-    # 过滤父域名
-    filtered_domains = filter_parent_domains(all_domains)
-    # 排序，忽略完整TLD
-    sorted_domains = sorted(filtered_domains, key=sort_key_ignore_tld)
-    # 写回文件（覆盖原文件）
     try:
-        with open(file_name, "w", encoding="utf8") as f:
-            for domain in sorted_domains:
-                f.write(f"{domain}\n")
-        print(f"💰去重完成，最终规则数：{len(filtered_domains)}")
+        if len(sys.argv) < 2:
+            print("请提供输入文件路径作为参数")
+            return
+        file_name = sys.argv[1]
+        all_domains = set()
+        # 读取文件并去重
+        async for chunk in read_lines(file_name):
+            all_domains.update(process_chunk(chunk))
+        if not all_domains:
+            print("文件为空或读取失败。")
+            return
+        # 过滤父域名
+        filtered_domains = filter_parent_domains(all_domains)
+        # 排序，忽略完整TLD
+        sorted_domains = sorted(filtered_domains, key=sort_key_ignore_tld)
+        # 写回文件（覆盖原文件）
+        try:
+            with open(file_name, "w", encoding="utf8") as f:
+                for domain in sorted_domains:
+                    f.write(f"{domain}\n")
+            print(f"💰去重完成，最终规则数：{len(filtered_domains)}")
+        except Exception as e:
+            print(f"写入文件时出错: {e}")
     except Exception as e:
-        print(f"写入文件时出错: {e}")
+        print("处理过程中发生错误：")
+        import traceback
+        traceback.print_exc()
 
 if __name__ == "__main__":
     asyncio.run(main())
