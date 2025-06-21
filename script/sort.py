@@ -12,7 +12,6 @@ REMOVE_KEYWORD = {
 }
 
 def clean_line(line: str) -> str:
-    # 只去除明确无关的符号，不动点和域名内容
     for ch in " \"'|^":
         line = line.replace(ch, "")
     return line
@@ -37,7 +36,6 @@ def prefilter_line(line: str) -> bool:
     return True
 
 def extract_domain(line: str) -> str | None:
-    # 不对域名内容做任何更改，仅提取
     line = clean_line(line.strip())
     for prefix, offset in [
         ("DOMAIN,", 7),
