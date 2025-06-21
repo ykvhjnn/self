@@ -104,10 +104,10 @@ mihomo_mrs_file="${mihomo_txt_file%.txt}.mrs"
 # -----------------------------------------------------------------------------
 # 【步骤8】下载 Mihomo 工具（只下载一次，已存在则跳过）
 # -----------------------------------------------------------------------------
+MIHOMO_TOOL=".mihomo_tool"
 function download_mihomo() {
-    if [[ -f .mihomo_tool && -x .mihomo_tool ]]; then
+    if [[ -f "$MIHOMO_TOOL" && -x "$MIHOMO_TOOL" ]]; then
         echo "[$(date '+%H:%M:%S')] Mihomo 工具已存在，跳过下载"
-        mihomo_tool=".mihomo_tool"
         return
     fi
     echo "[$(date '+%H:%M:%S')] 开始下载 Mihomo 工具..."
@@ -119,8 +119,7 @@ function download_mihomo() {
         || error_exit "下载 Mihomo 工具失败"
     gzip -d "$tool_name.gz" || error_exit "解压 Mihomo 工具失败"
     chmod +x "$tool_name" || error_exit "赋予 Mihomo 工具可执行权限失败"
-    mv "$tool_name" .mihomo_tool
-    mihomo_tool=".mihomo_tool"
+    mv "$tool_name" "$MIHOMO_TOOL"
     rm -f version.txt
 }
 download_mihomo
@@ -142,11 +141,11 @@ while read -r url; do
     [[ -n "$url" ]] && urls_list+=("$url")
 done <<< "${urls_map[$group]}"
 
-# 使用 GNU parallel/后台任务并发下载
 pids=()
 for url in "${urls_list[@]}"; do
     {
-        if curl --http2 --compressed --max-time 30 --retry 2 -sSL "$url" >> "${tmp_file}_$RANDOM"; then
+        out="${tmp_file}_$RANDOM"
+        if curl --http2 --compressed --max-time 30 --retry 2 -sSL "$url" >> "$out"; then
             echo "[$(date '+%H:%M:%S')] [小] 拉取成功: $url"
         else
             echo "[$(date '+%H:%M:%S')] [WARN] 拉取失败: $url" >&2
@@ -198,7 +197,7 @@ sed "s/^/\\+\\./g" "$domain_file" > "$mihomo_txt_file"
 # -----------------------------------------------------------------------------
 # 【步骤15】调用 Mihomo 工具转换为mrs格式
 # -----------------------------------------------------------------------------
-if ! "$mihomo_tool" convert-ruleset domain text "$mihomo_txt_file" "$mihomo_mrs_file"; then
+if ! "./$MIHOMO_TOOL" convert-ruleset domain text "$mihomo_txt_file" "$mihomo_mrs_file"; then
     error_exit "Mihomo 工具转换 $mihomo_txt_file 失败"
 fi
 
