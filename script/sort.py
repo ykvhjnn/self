@@ -1,24 +1,18 @@
 import sys
 import asyncio
 
-# 结尾匹配黑名单（REMOVE_END）
 REMOVE_END = {
     "."
 }
 
-# 包含关键词黑名单
 REMOVE_KEYWORD = {
     "payload:", "rules:", "regexp", "IP-CIDR,", "DOMAIN-KEYWORD,", "PROCESS-NAME,",
     "IP-SUFFIX,", "GEOIP,", "GEOSITE,",
     "#", "*", "!", "/", "【", "】", "[", "]", "$"
 }
 
-# 匹配域名黑名单
-REMOVE_DOMAIN = {
-    # 这里可以添加需要去除的具体域名
-}
-
 def clean_line(line: str) -> str:
+    # 只去除明确无关的符号，不动点和域名内容
     for ch in " \"'|^":
         line = line.replace(ch, "")
     return line
@@ -35,10 +29,6 @@ def is_remove_end(domain: str) -> bool:
             return True
     return False
 
-def is_remove_domain(domain: str) -> bool:
-    return domain in REMOVE_DOMAIN
-
-# 先FILTER_KEYWORDS，再去除@@
 def prefilter_line(line: str) -> bool:
     if is_remove_keyword(line):
         return False
@@ -46,8 +36,8 @@ def prefilter_line(line: str) -> bool:
         return False
     return True
 
-# 提取有效域名
 def extract_domain(line: str) -> str | None:
+    # 不对域名内容做任何更改，仅提取
     line = clean_line(line.strip())
     for prefix, offset in [
         ("DOMAIN,", 7),
@@ -65,7 +55,6 @@ def extract_domain(line: str) -> str | None:
         return line
     return None
 
-# 处理一块文件内容
 def process_chunk(chunk: list[str]) -> set[str]:
     result = set()
     for line in chunk:
@@ -74,23 +63,28 @@ def process_chunk(chunk: list[str]) -> set[str]:
         domain = extract_domain(line)
         if not domain:
             continue
-        # REMOVE_END
         if is_remove_end(domain):
-            continue
-        # REMOVE_DOMAIN
-        if is_remove_domain(domain):
             continue
         result.add(domain)
     return result
 
-# 异步读取文件，分块返回行列表
-async def read_lines(file_path: str):
-    with open(file_path, "r", encoding="utf8") as f:
-        while True:
-            lines = f.readlines(10000)
-            if not lines:
-                break
-            yield lines
+async def read_lines(file_path: str, chunk_size: int = 100000) -> list[list[str]]:
+    """
+    异步读取大文件，按chunk_size分块返回，提升I/O效率
+    """
+    chunks = []
+    chunk = []
+    async def _read():
+        with open(file_path, "r", encoding="utf8") as f:
+            for line in f:
+                chunk.append(line)
+                if len(chunk) >= chunk_size:
+                    chunks.append(chunk[:])
+                    chunk.clear()
+            if chunk:
+                chunks.append(chunk[:])
+    await asyncio.get_event_loop().run_in_executor(None, _read)
+    return chunks
 
 async def main():
     if len(sys.argv) < 2:
@@ -98,7 +92,8 @@ async def main():
         return
     file_name = sys.argv[1]
     all_domains = set()
-    async for chunk in read_lines(file_name):
+    chunks = await read_lines(file_name)
+    for chunk in chunks:
         all_domains.update(process_chunk(chunk))
     with open(file_name, "w", encoding="utf8") as f:
         for domain in sorted(all_domains):
