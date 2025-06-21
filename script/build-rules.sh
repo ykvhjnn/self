@@ -15,13 +15,18 @@ function error_exit() {
 }
 
 # ----------------------------------------------------------------------------
-# 【步骤2】进入脚本目录，确保相对路径有效
+# 【步骤2】参数个数检查，必须指定规则类型（必须放在任何 $1 用到前！）
 # ----------------------------------------------------------------------------
-cd "$(cd "$(dirname "$0")"; pwd)" || error_exit "无法进入脚本目录"
+if [[ $# -ne 1 ]]; then
+    echo "用法: $0 [组名]"
+    echo "示例: $0 Proxy"
+    exit 1
+fi
 
 # ----------------------------------------------------------------------------
-# 【步骤3】（已移除，原为检查输入参数，必须指定规则类型）
+# 【步骤3】进入脚本目录，确保相对路径有效
 # ----------------------------------------------------------------------------
+cd "$(cd "$(dirname "$0")"; pwd)" || error_exit "无法进入脚本目录"
 
 # ----------------------------------------------------------------------------
 # 【步骤4】定义全部规则源组（可自定义添加新组，组名为key，规则url为value，多行可加）
@@ -64,6 +69,12 @@ https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.huaw
 https://raw.githubusercontent.com/ykvhjnn/mihomo-rule/refs/heads/main/self/Ad-fix.yaml
 "
 
+# 【示例】添加自定义组（组名：Custom），可按需修改
+urls_map["Custom"]="
+https://example.com/custom1.txt
+https://example.com/custom2.txt
+"
+
 # ----------------------------------------------------------------------------
 # 【步骤5】每组类型对应的 Python 处理脚本（需与组名一一对应，扩展需同步添加）
 # ----------------------------------------------------------------------------
@@ -71,6 +82,7 @@ declare -A py_scripts
 py_scripts["Proxy"]="sort.py remove-proxy.py clear.py"
 py_scripts["Directfix"]="sort.py clear.py"
 py_scripts["Ad"]="sort.py remove-ad.py clear.py"
+py_scripts["Custom"]="sort.py clear.py"   # 自定义组默认处理脚本
 
 # ----------------------------------------------------------------------------
 # 【步骤6】参数校验，组名需在定义的urls_map中
