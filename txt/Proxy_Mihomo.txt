@@ -839,12 +839,12 @@
 +.actual.ac.uk
 +.acu.ac.uk
 +.aculo.us
-+.ntp.jst.mfeed.ad.jp
-+.ntp3.jst.mfeed.ad.jp
 +.ntp2.jst.mfeed.ad.jp
++.ntp.jst.mfeed.ad.jp
 +.ntp1.jst.mfeed.ad.jp
-+.ntp1.v6.mfeed.ad.jp
++.ntp3.jst.mfeed.ad.jp
 +.ntp3.v6.mfeed.ad.jp
++.ntp1.v6.mfeed.ad.jp
 +.ntp2.v6.mfeed.ad.jp
 +.ntp-os01.ocn.ad.jp
 +.ntp-tk01.ocn.ad.jp
@@ -9381,6 +9381,7 @@
 +.dri.ac.uk
 +.dribbble.com
 +.1password.drift.click
++.404:notfound1password.drift.click
 +.drindod.ac.uk
 +.driverxxx.com
 +.drivevideo.xyz
