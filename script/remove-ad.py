@@ -1,7 +1,30 @@
-import sys
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-# 结尾匹配黑名单
-REMOVE_END = {
+"""
+脚本功能：
+- 根据黑名单规则（域名、关键词、结尾）过滤输入列表
+- 支持添加新域名白名单规则，并在去除黑名单后再添加
+- 优化处理速度：只处理必要的行，返回过滤后新列表
+- 支持规则为空的情况，避免误删
+- 日志记录：时间+简要事件，突出主要流程
+- 代码结构：模块化、注释规范、便于维护和理解
+"""
+
+import sys
+import re
+import time
+from typing import List, Set
+
+# ========================== 配置区域 ==========================
+# 黑名单规则
+REMOVE_DOMAIN = set([
+])
+
+REMOVE_KEYWORD = set([
+])
+
+REMOVE_END = set([
     ".jp", ".kr", ".in", ".id", ".th", ".sg", ".my", ".ph", ".vn",
     ".pk", ".bd", ".lk", ".np", ".mn", ".uz", ".kz", ".kg", ".bt", ".mv", ".mm",
     ".uk", ".de", ".fr", ".it", ".es", ".ru", ".nl", ".be", ".ch", ".at", ".pl",
@@ -16,61 +39,142 @@ REMOVE_END = {
     ".sa", ".ae", ".ir", ".il", ".iq", ".tr", ".sy", ".jo", ".lb", ".om", ".qa",
     ".ye", ".kw", ".bh",
     "ms.bdstatic.com"
-}
-
-# 包含关键词黑名单
-REMOVE_KEYWORD = {
-    # 这里可以添加需要去除的具体关键词
-}
-
-# 匹配域名黑名单
-REMOVE_DOMAIN = set([
-    # 请在这里添加需要屏蔽的域名，如：
-    # "example.com",
-    # "adserver.test"
 ])
 
-def is_remove_end(domain: str) -> bool:
-    """判断域名是否以黑名单的后缀结尾"""
-    return any(domain.endswith(suffix) for suffix in REMOVE_END)
+# 新增白名单规则（去除黑名单后再添加）
+ADD_DOMAIN = set([
+])
 
-def is_remove_keyword(line: str) -> bool:
-    """判断行内是否含有黑名单关键词"""
-    return any(keyword in line for keyword in REMOVE_KEYWORD)
+# ========================== 日志工具 ==========================
+def log(event: str, major: bool = False):
+    """
+    日志输出，包含时间戳。大事件高亮显示。
+    """
+    prefix = "[{}]".format(time.strftime("%Y-%m-%d %H:%M:%S"))
+    if major:
+        print(f"{prefix} [重要] {event}")
+    else:
+        print(f"{prefix} {event}")
 
-def is_remove_domain(domain: str) -> bool:
-    """判断域名是否在域名黑名单中"""
-    return domain in REMOVE_DOMAIN
+# ========================== 规则检查工具 ==========================
+def is_match_domain(line: str, domains: Set[str]) -> bool:
+    """
+    判断一行是否包含黑名单域名（完全匹配或以域名为结尾）。
+    支持列表为空。
+    """
+    if not domains:
+        return False
+    return any(line.strip().endswith(domain) or line.strip() == domain for domain in domains)
 
-def process_lines(lines):
-    """处理所有行，返回过滤后的新列表"""
-    result = []
+def is_match_keyword(line: str, keywords: Set[str]) -> bool:
+    """
+    判断一行是否包含黑名单关键词。
+    支持列表为空。
+    """
+    if not keywords:
+        return False
+    return any(keyword in line for keyword in keywords)
+
+def is_match_end(line: str, ends: Set[str]) -> bool:
+    """
+    判断一行是否以黑名单结尾。
+    支持列表为空。
+    """
+    if not ends:
+        return False
+    return any(line.strip().endswith(ending) for ending in ends)
+
+def is_add_domain(line: str, add_domains: Set[str]) -> bool:
+    """
+    判断一行是否为需要添加的白名单域名。
+    支持列表为空。
+    """
+    if not add_domains:
+        return False
+    return any(line.strip().endswith(domain) or line.strip() == domain for domain in add_domains)
+
+# ========================== 主处理函数 ==========================
+def filter_lines(lines: List[str]) -> List[str]:
+    """
+    过滤输入行，去除黑名单，添加白名单。
+    返回过滤后新列表。
+    """
+    filtered = []
+    add_lines = set()
+
+    log("开始过滤黑名单...", major=True)
+
     for line in lines:
-        line = line.rstrip("\n")
-        if is_remove_keyword(line):
+        line_strip = line.strip()
+        # 跳过空行
+        if not line_strip:
             continue
-        domain = line  # 只做简单处理
-        if is_remove_end(domain):
+        # 域名黑名单过滤
+        if is_match_domain(line_strip, REMOVE_DOMAIN):
             continue
-        if is_remove_domain(domain):
+        # 关键词黑名单过滤
+        if is_match_keyword(line_strip, REMOVE_KEYWORD):
             continue
-        result.append(line)
-    return result
+        # 结尾黑名单过滤
+        if is_match_end(line_strip, REMOVE_END):
+            continue
+        filtered.append(line_strip)
 
+    log(f"黑名单过滤完成，剩余 {len(filtered)} 行。", major=True)
+
+    # 添加白名单
+    if ADD_DOMAIN:
+        log("开始添加白名单...", major=True)
+        # 只添加不在filtered中的ADD_DOMAIN
+        existing = set(filtered)
+        for add_domain in ADD_DOMAIN:
+            if add_domain not in existing:
+                add_lines.add(add_domain)
+        filtered.extend(sorted(add_lines))
+        log(f"添加白名单完成，总计 {len(filtered)} 行。", major=True)
+
+    return filtered
+
+# ========================== 主执行入口 ==========================
 def main():
+    """
+    主程序入口，读取输入文件，处理并输出过滤结果。
+    """
     if len(sys.argv) < 2:
-        print("请提供输入文件路径作为参数")
-        return
-    file_name = sys.argv[1]
-    try:
-        with open(file_name, "r", encoding="utf8") as f:
-            lines = f.readlines()
-        result = process_lines(lines)
-        with open(file_name, "w", encoding="utf8") as f:
-            f.writelines(f"{domain}\n" for domain in result)
-        print(f"去除域名完成，保留的规则总数为：{len(result)}")
-    except Exception as e:
-        print(f"处理文件时出错: {e}")
+        print(f"用法: python {sys.argv[0]} <输入文件> [输出文件]")
+        sys.exit(1)
 
+    input_file = sys.argv[1]
+    output_file = sys.argv[2] if len(sys.argv) > 2 else None
+
+    try:
+        with open(input_file, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+        log(f"读取输入文件 {input_file}，共 {len(lines)} 行。", major=True)
+    except Exception as e:
+        log(f"读取文件失败: {e}", major=True)
+        sys.exit(1)
+
+    # 过滤处理
+    result = filter_lines(lines)
+
+    # 输出结果
+    if output_file:
+        try:
+            with open(output_file, "w", encoding="utf-8") as f:
+                for line in result:
+                    f.write(line + "\n")
+            log(f"已写入输出文件 {output_file}。", major=True)
+        except Exception as e:
+            log(f"写入输出文件失败: {e}", major=True)
+            sys.exit(1)
+    else:
+        # 控制台输出
+        for line in result:
+            print(line)
+
+    log("处理完成。", major=True)
+
+# ========================== 程序入口 ==========================
 if __name__ == "__main__":
     main()
