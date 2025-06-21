@@ -1,11 +1,3 @@
-+.example
-+.internal
-+.invalid
-+.lan
-+.local
-+.localdomain
-+.localhost
-+.test
 +.acl4.ssr
 +.instant.arubanetworks.com
 +.setmeup.arubanetworks.com
@@ -112,8 +104,8 @@
 +.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa
 +.8.b.d.0.1.0.0.2.ip6.arpa
 +.d.f.ip6.arpa
-+.b.e.f.ip6.arpa
 +.9.e.f.ip6.arpa
++.b.e.f.ip6.arpa
 +.a.e.f.ip6.arpa
 +.8.e.f.ip6.arpa
 +.jsdelivr.net
