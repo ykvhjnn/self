@@ -20,51 +20,57 @@ REMOVE_END = {
 
 # 包含关键词黑名单
 REMOVE_KEYWORD = {
-    # 这里可以添加需要去除的具体域名
+    # 这里可以添加需要去除的具体关键词
 }
 
 # 匹配域名黑名单
-REMOVE_DOMAIN = {
-    # 这里可以添加需要去除的具体域名
-}
+REMOVE_DOMAIN = set([
+    # 请在这里添加需要屏蔽的域名，如：
+    # "example.com",
+    # "adserver.test"
+])
 
 def is_remove_end(domain: str) -> bool:
-    for suffix in REMOVE_END:
-        if domain.endswith(suffix):
-            return True
-    return False
+    """判断域名是否以黑名单的后缀结尾"""
+    return any(domain.endswith(suffix) for suffix in REMOVE_END)
 
 def is_remove_keyword(line: str) -> bool:
-    for keyword in REMOVE_KEYWORD:
-        if keyword in line:
-            return True
-    return False
+    """判断行内是否含有黑名单关键词"""
+    return any(keyword in line for keyword in REMOVE_KEYWORD)
 
 def is_remove_domain(domain: str) -> bool:
+    """判断域名是否在域名黑名单中"""
     return domain in REMOVE_DOMAIN
+
+def process_lines(lines):
+    """处理所有行，返回过滤后的新列表"""
+    result = []
+    for line in lines:
+        line = line.rstrip("\n")
+        if is_remove_keyword(line):
+            continue
+        domain = line  # 只做简单处理
+        if is_remove_end(domain):
+            continue
+        if is_remove_domain(domain):
+            continue
+        result.append(line)
+    return result
 
 def main():
     if len(sys.argv) < 2:
         print("请提供输入文件路径作为参数")
         return
     file_name = sys.argv[1]
-    result = []
-    with open(file_name, "r", encoding="utf8") as f:
-        for line in f:
-            line = line.rstrip("\n")
-            if is_remove_keyword(line):
-                continue
-            # 只做简单的行处理，提取域名
-            domain = line
-            if is_remove_end(domain):
-                continue
-            if is_remove_domain(domain):
-                continue
-            result.append(line)
-    with open(file_name, "w", encoding="utf8") as f:
-        for domain in result:
-            f.write(f"{domain}\n")
-    print(f"去除域名完成，保留的规则总数为：{len(result)}")
+    try:
+        with open(file_name, "r", encoding="utf8") as f:
+            lines = f.readlines()
+        result = process_lines(lines)
+        with open(file_name, "w", encoding="utf8") as f:
+            f.writelines(f"{domain}\n" for domain in result)
+        print(f"去除域名完成，保留的规则总数为：{len(result)}")
+    except Exception as e:
+        print(f"处理文件时出错: {e}")
 
 if __name__ == "__main__":
     main()
