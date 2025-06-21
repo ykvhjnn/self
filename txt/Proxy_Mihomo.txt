@@ -17483,7 +17483,6 @@
 +.tbssqh.org
 +.tbswd.org
 +.tbthouston.org
-+.tbuyus.com
 +.tc
 +.tccwonline.org
 +.tcewf.org
